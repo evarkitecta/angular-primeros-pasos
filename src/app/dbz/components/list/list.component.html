@@ -1,0 +1,68 @@
+<h4>Listado</h4>
+<!-- *Angular v17 -->
+<div class="apuntes mt-3">
+  <p class="blue">Mostrar todos los elementos de un array en una lista y coloresar en función del índice o posición del elemento en el array</p>
+  <p class="blue">Componente: <strong>dbz/components/list/list.component.html</strong></p>
+  <p>Creado con Angular v16: *ngFor ="let character of characterList;
+    let i = index;
+    let isFirst = first;
+    let isLast = last;
+    let isEven= even;
+    let isOdd = odd;
+    "</p>
+</div>
+
+<ul class="list-group">
+  <!-- *Añadir clases condicionales al ngFor con [ngClass]-->
+  <li *ngFor="let character of characterList;
+    let i = index;
+    let isFirst = first;
+    let isLast = last;
+    let isEven= even;
+    let isOdd = odd;
+    "
+    class="list-group-item"
+    [ngClass]="{'list-group-item-dark': isLast, 'list-group-item-primary': isEven}" >
+    <!-- class="list-group-item {{ i== 0 ?'list-group-item-success' : ''}}"> -->
+
+    <span class="text-primary"> {{i + 1}}. </span>
+
+    <span>{{character.name}} - </span>
+
+    <strong>Power: </strong>
+
+    <span>{{character.power}}</span>
+
+    <!-- * Opción 1: usando i con condiciones -->
+    <!-- <span> . Es el primero: {{ i=== 0}} </span>
+    <span> . Es el último: {{ i === characterList.length - 1}} </span> -->
+
+    <!-- * Opción 2: usando variables especiales dentro del *ngFor even, last, even-->
+
+    <!-- <span> . Es el primero: {{ isFirst}} </span>
+    <span> . Es el último: {{ isLast}} </span>
+    <span> . Es impar: {{ isEven}} </span> -->
+
+    <!-- <span> . Es Par: {{ isEven}} </span>
+    <span> . Es Impar: {{ isOdd}} </span> -->
+
+  </li>
+<!-- *Angular v17 -->
+<div class="apuntes mt-4">
+  <p>Creado con Angular v17 &#64;for (character of characterList; track $index; let first = $first, last = $last, even = $even, odd = $odd, count = $count)  &#123;&#125;</p>
+
+</div>
+  <ul class="list-group mb-5"  >
+
+    @for (character of characterList; track $index; let first = $first, last = $last, even = $even, odd = $odd, count= $count) {
+      <li class="list-group-item d-flex justify-content-between align-items-center" [ngClass]="{'list-group-item-dark': last, 'list-group-item-primary': even}">
+        <div>
+        <span class="text-primary">{{ $index + 1 }}/{{count}}.</span> {{character.name}} - <strong>Power: </strong> {{character.power}}
+        </div>
+        <button class="btn btn-danger" (click)="onDeleteCharacter(character.id)">X</button>
+      </li>
+
+    }
+  </ul>
+
+</ul>

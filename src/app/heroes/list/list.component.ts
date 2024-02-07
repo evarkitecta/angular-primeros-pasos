@@ -9,9 +9,8 @@ export class ListComponent {
 
   public heroNames: string[] = ['Spiderman', 'Ironman', 'Hulk', 'Vilma'];
 
+  // *Para que una variable viva a lo largo de la clase debemos crearla como una propiedad de la clase, no como una variable dentro de un método.
   // * 2 formas de crear una variable.
-  // *Para que una variable viva a lo largo de la clase debemos crearla como una propiedad de clase.
-
   // public deletedHero?: string = '';
   public deletedHero?: string;
 
@@ -20,6 +19,10 @@ export class ListComponent {
     this.deletedHero = this.heroNames.pop();
     // *El scope de esta variable es sólo dentro de este método
     // const deletedHero = this.heroNames.pop();
+  }
+
+  resetListHero(): void {
+    this.heroNames = ['Spiderman', 'Ironman', 'Hulk', 'Vilma'];
   }
 
 }

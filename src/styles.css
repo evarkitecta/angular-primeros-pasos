@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.apuntes  {
+  color: rgb(134, 134, 134);
+  font-style: italic;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.blue {
+  color: blue;
+}

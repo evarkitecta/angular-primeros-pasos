@@ -1,17 +1,46 @@
 <h3>Listado de héroes</h3>
 
-<div *ngIf="deletedHero; else nothingWasDeleted">
+<!-- *ngIf Angular v16 -->
+
+<!-- <div *ngIf="deletedHero; else nothingWasDeleted">
   <h3>Héroe borrado<small class="text-danger"> {{ deletedHero }}</small></h3>
-</div>
+</div> -->
 <!-- El ng-template no se renderiza. No rompe la estructura de la página. En cambio el div del h3 superior sí que afecta a toda la estructura de la página. -->
-<ng-template #nothingWasDeleted>
+<!-- <ng-template #nothingWasDeleted>
 <h3 *ngIf="!deletedHero">No ha borrado nada</h3>
-</ng-template>
+</ng-template> -->
 
-<button *ngIf="heroNames.length > 0" class="btn btn-outline-danger" (click)="removeLastHero()">Borrar último héroe</button>
+<!-- <button *ngIf="heroNames.length > 0" class="btn btn-outline-danger" (click)="removeLastHero()">Borrar último héroe</button> -->
 
-<ul class="mt-2 list-group">
-<li *ngFor="let name of heroNames" class="list-group-item">{{ name }}</li>
-</ul>
+<!-- <ul class="mt-2 list-group">
+  <li *ngFor="let name of heroNames" class="list-group-item">{{ name }}</li>
+</ul> -->
+
+
+<!-- *Angular v17 -->
+
+<div class="mb-3">
+  @if (deletedHero) {
+    <div >
+    <h3>Héroe borrado<small class="text-danger"> {{ deletedHero }}</small></h3>
+  </div>
+  } @else {
+    <h3>No ha borrado nada</h3>
+  }
+
+  @if (heroNames.length > 0 ) {
+    <button class="btn btn-outline-danger" (click)="removeLastHero()">Borrar último Héroe</button>
+  } @else () {
+    <button class="btn btn-outline-danger" (click)="resetListHero()">Reset Lista</button>
+  }
+
+  @for (name of heroNames; track $index) {
+
+    <ul class="mt-2 list-group">
+      <li class="list-group-item">{{ name }}</li>
+    </ul>
+
+  }
+</div>
 
 

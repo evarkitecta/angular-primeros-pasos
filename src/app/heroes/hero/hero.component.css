@@ -7,3 +7,8 @@ dd{
   font-size: 1.5rem;
   font-weight: bold;
 }
+
+.bg-grey{
+  background-color: rgb(199, 194, 194);
+  border-radius: 1rem;
+}

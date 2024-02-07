@@ -1,0 +1,17 @@
+<h4>Agregar personaje</h4>
+<div class="apuntes mt-3">
+  <p class="blue">Recoger los datos de un formulario usando el two-way data binding y (ngSubmit)</p>
+  <p class="blue">Componente: <strong>dbz/components/list/add-character.component.html</strong></p>
+  <p> [(ngModel)]="character.name" name="name"</p>
+  <p>&#60;form class="row" (ngSubmit)="emitCharacter()">&#60;/form></p>
+  <p>Usar la palabra "debugger" en VSC o breakpoints en navegador</p>
+  <p>Trasladar toda la lógica al servicio y añadimos <a href="https://www.npmjs.com/package/uuid" target="_blank">uuid (id)</a></p>
+
+</div>
+
+<form class="row" (ngSubmit)="emitCharacter()">
+  <input type="text" [(ngModel)]="character.name" name="name" class="form-control mb-2" placeholder="Nombre del personaje">
+  <input type="number" [(ngModel)]="character.power" name="power" class="form-control mb-2" placeholder="Poder">
+ <button type="submit" class="btn btn-primary" >Añadir</button>
+ <pre>{{character | json}}</pre>
+</form>

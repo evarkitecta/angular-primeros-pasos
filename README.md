@@ -1,6 +1,9 @@
 # Bases
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3 and has been updated to version 17.1.2
+
+## See the website
+I want to visit this website in my navigator: [click here to visit this website](https://evarkitecta.github.io/angular-primeros-pasos/)
 
 ## Development server
 

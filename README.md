@@ -28,3 +28,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Building dependencies to github pages
+
+❌ To delete docs folder use: [del-cli](https://www.npmjs.com/package/del-cli).
+
+- Install only as development dependency: `$ npm install del-cli --save-dev`
+- It doesn't work with Windows. Write this in scripts to delete with a confirmation delete question or not, respectively:  
+-->`"delete:docs": "rd /s docs"`  or -->`"delete:docs": "rd /s /q docs"`,
+
+🔁 To copy files from a directory use: [copyfiles](https://www.npmjs.com/package/copyfiles).
+
+See the scripts code from file `package.json` in this repository
+
+
